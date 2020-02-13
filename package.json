@@ -1,0 +1,28 @@
+{
+  "name": "excelUpload",
+  "version": "1.1.0",
+  "description": "A Node.js starter for the Serverless Framework with async/await and unit test support",
+  "main": "handler.js",
+  "scripts": {
+    "test": "serverless-bundle test"
+  },
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AnomalyInnovations/serverless-nodejs-starter.git"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-decorators": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-react": "^7.8.3",
+    "aws-sdk": "^2.617.0",
+    "moment": "^2.24.0",
+    "serverless-bundle": "^1.2.5",
+    "serverless-dotenv-plugin": "^2.1.1",
+    "serverless-offline": "^5.3.3",
+    "xlsx": "^0.15.5"
+  },
+  "dependencies": {}
+}

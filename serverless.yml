@@ -1,0 +1,42 @@
+# NOTE: update this with your service name
+service: excelUpload
+
+# Create an optimized package for our functions
+package:
+  individually: true
+
+plugins:
+  - serverless-bundle # Package our functions with Webpack
+  - serverless-offline
+  - serverless-dotenv-plugin # Load .env as environment variables
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  stage: dev
+  region: ap-northeast-2
+  iamRoleStatements:
+    - Effect: "Allow"
+      Resource: "*"
+      Action:
+        - "cloudwatch:*"
+        - "dynamodb:*"
+        - "events:*"
+        - "iam:ListAttachedRolePolicies"
+        - "iam:ListRolePolicies"
+        - "iam:ListRoles"
+        - "iam:PassRole"
+        - "kinesis:*"
+        - "lambda:*"
+        - "logs:*"
+        - "s3:*"
+        - "apigateway:*"
+        - "ec2:*"
+
+functions:
+  hello:
+    handler: handler.handler
+    events:
+      - http:
+          path: hello
+          method: post
